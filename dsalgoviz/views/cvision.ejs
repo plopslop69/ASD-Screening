@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!-- Can use this page to show the output -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASD Screening Website</title>
+
+    <%- include("./partials/csslibs.ejs") %>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/create-quiz.css" />
+    <link rel="icon" href="/images/Group 18.png" type="image/icon type" />
+  </head>
+
+  <body>
+    <%- include("partials/navbar.ejs", {page : "cvision"}) %>
+
+    <main>
+      <div class="toptext">
+        <h1 style="color: #353535"></h1>
+      </div>
+
+      <header>
+        <h1 style="font-size: 50px">
+          Welcome to
+          <span style="color: #47b3d4"
+            >AI-Based Eye Contact Testing System</span
+          >
+          for ASD Screening
+        </h1>
+      </header>
+      <br />
+      <section style="width: 1000px; margin: 0 auto">
+        <h5>
+          Our computer vision-based model will take a video input of your child,
+          process it, and then generate screening results based on our trained
+          AI models.
+        </h5>
+        <br /><br />
+      </section>
+      <br />
+      <div
+        style="
+          background-color: white;
+          padding: 10px 10px 30px 10px;
+          border-radius: 20px;
+        "
+      >
+        <section
+          style="
+            margin-top: 50px;
+            padding-bottom: 35px;
+            border-bottom: 1px dashed #353535;
+          "
+        >
+          <h2>Instructions for Video Capturing:</h2>
+          <br />
+          <ol style="font-size: 20px; text-align: left; margin-left: 400px">
+            <li>
+              Use a high-resolution camera to ensure clear and detailed footage.
+            </li>
+            <li>
+              Position the camera at an appropriate angle to capture the
+              individual's face, body language, and interactions with the
+              environment.
+            </li>
+            <li>
+              Ensure proper lighting to avoid shadows or glare that may obscure
+              facial expressions or gestures.
+            </li>
+            <li>
+              Natural light is preferable, but if indoors, use well-distributed
+              artificial lighting.
+            </li>
+            <li>
+              Minimize distractions and background noise to focus on the
+              individual's actions and reactions.
+            </li>
+            <li>
+              Record a sufficiently long session to capture a range of
+              behaviors.
+            </li>
+            <li>
+              Consider multiple recording sessions to observe different aspects
+              of behavior over time.
+            </li>
+          </ol>
+        </section>
+        <br /><br />
+        <label for="file" style="font-size: 30px; margin-top: 10px"
+          >Select Resource</label
+        >
+        <form
+          style="
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            align-items: center;
+            gap: 20px;
+          "
+          action="/fileupload"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          <div>
+            <input
+              style="margin-bottom: 10px; display: flex; width: 100%; gap: 10px"
+              type="file"
+              name="file"
+              id="file"
+              accept=".mp4"
+            />
+          </div>
+          <button
+            style="
+              padding: 5px;
+              height: 50px;
+              width: 150px;
+              border-radius: 20px;
+              background-color: #47b3d4;
+              color: white;
+              outline: none;
+              border: 2px solid #47b3d4;
+            "
+            class="btn2"
+            type="submit"
+          >
+            Upload Resource
+          </button>
+        </form>
+        <br />
+      </div>
+      <!-- Copyright -->
+      <div class="cpr" style="color: #4b50b9">
+        ASD Screening Website Copyright © 2023. All rights reserved.
+      </div>
+      <!-- Copyright -->
+    </main>
+  </body>
+</html>

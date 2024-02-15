@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include("./partials/csslibs.ejs") %>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/learn.css" />
+
+    <link rel="icon" href="/images/Group 18.png" type="image/png" />
+
+    <title>Learn - ASD Screening Website</title>
+    <style>
+      :root {
+        /* margins */
+        --main_margin: 50px 200px 50px 200px;
+
+        /* Colors */
+        --blue: #14a6da;
+        --dblue: #0566c5;
+        --rosered: 243, 93, 88;
+        --btnidle: #effbff80;
+        --btnhover: 255, 224, 224, 0.402;
+        --textgrey: #353535;
+        --web_bg: #e8f9ff;
+        font-family: "Jost";
+      }
+
+      @font-face {
+        font-family: "Jost";
+        src: url("../../Assets/Fonts/Jost/static/Jost-Regular.ttf");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      body {
+        margin: 0;
+        background-color: var(--web_bg);
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        margin: var(--main_margin);
+        color: #353535;
+        background-color: white;
+      }
+
+      hr,
+      .separator {
+        width: 100%;
+        border: 1px dashed var(--textgrey);
+        opacity: 0.4;
+        margin: 50px 0px 50px 0px;
+      }
+
+      select,
+      input[type="text"] {
+        /* all: unset; */
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+        font-size: inherit;
+        font-family: inherit;
+        color: var(--blue);
+        padding: 2px;
+        border-bottom: 2px solid var(--blue);
+        transition: 150ms ease;
+        background-color: white;
+
+        padding: 0px 5px 0px 5px;
+      }
+
+      ol {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .heading {
+        margin: 50px 50px 50px 50px;
+        text-align: center;
+        font-size: 39px;
+      }
+      .what1 {
+        color: var(--blue);
+      }
+      .what2 {
+        color: rgba(var(--rosered));
+      }
+      .faq {
+        margin: 0px 100px 50px 100px;
+        font-size: 21px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        .faq-card {
+          display: flex;
+          flex-direction: column;
+          .faq-qn {
+            background-color: rgba(var(--rosered), 0.55);
+            border: 1px solid rgba(var(--rosered), 0.25);
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 5px 5px 5px 0px;
+            color: white;
+          }
+          .faq-ans {
+            line-height: 40px;
+            padding: 20px 10px 20px 40px;
+            border-radius: 0px 0px 5px 5px;
+            border: 2px solid rgba(var(--rosered), 0.55);
+            font-size: 18px;
+            border-top: none;
+            margin: 0px 30px 0px 0px;
+            background-color: var(--web_bg);
+            & li {
+              margin-left: 20px;
+              & li {
+                margin-left: 0px;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <%- include("./partials/navbar.ejs", { page: "about" }) %>
+
+    <main style="padding: 4rem 4rem 1rem 4rem">
+      <div class="content">
+        <div class="heading">Exploring Autism Spectrum Disorder</div>
+        <div class="faq">
+          <!-- faq-card is the template for each faqs -->
+          <div class="faq-card">
+            <div class="faq-qn">1. What is Autism Spectrum Disorder (ASD)?</div>
+            <div class="faq-ans">
+              Autism spectrum disorder (ASD) is a neurological and developmental
+              disorder that affects how people interact with others,
+              communicate, learn, and behave. It is known as a “spectrum”
+              disorder because there is wide variation in the type and severity
+              of symptoms people experience.
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-qn">
+              2. What are the distinguishable ASD symptoms and traits?
+            </div>
+            <div class="faq-ans">
+              It's important to note that each individual with ASD is unique,
+              and their symptoms may manifest differently. Here are some of the
+              distinguishable ASD symptoms and traits:
+              <ol>
+                <li>
+                  Social Communication Challenges:
+                  <ul>
+                    <li>
+                      Difficulty with reciprocal social interactions and
+                      communication, such as understanding social cues,
+                      maintaining eye contact, and taking turns in
+                      conversations.
+                    </li>
+                    <li>
+                      Challenges in understanding and using nonverbal
+                      communication, like gestures, facial expressions, and body
+                      language.
+                    </li>
+                    <li>
+                      Limited ability to engage in back-and-forth conversations,
+                      often resulting in conversations being one-sided or
+                      focused on a specific topic of interest.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Repetitive Behaviors and Interests:
+                  <ul>
+                    <li>
+                      Engagement in repetitive or stereotyped behaviors, like
+                      hand-flapping, rocking, or repeating certain words or
+                      phrases.
+                    </li>
+                    <li>
+                      Strong adherence to routines and rituals; any disruption
+                      to these routines can cause distress.
+                    </li>
+                    <li>
+                      Intense focus on specific topics or interests, often to
+                      the exclusion of other activities.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Sensory Sensitivities:
+                  <ul>
+                    <li>
+                      Heightened or decreased sensitivity to sensory stimuli,
+                      such as light, sound, textures, tastes, or smells.
+                    </li>
+                    <li>
+                      May be overwhelmed or distressed by sensory input that
+                      others find tolerable or unnoticeable.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Difficulty with Change:
+                  <ul>
+                    <li>
+                      Resistance to changes in routine or environment, leading
+                      to anxiety or distress when faced with transitions.
+                    </li>
+                    <li>Difficulty adapting to unexpected situations.</li>
+                  </ul>
+                </li>
+
+                <li>
+                  Communication Challenges:
+                  <ul>
+                    <li>
+                      Delayed or atypical language development; some individuals
+                      may not develop verbal language at all.
+                    </li>
+                    <li>
+                      Echolalia, which involves repeating words or phrases
+                      without necessarily understanding their meaning.
+                    </li>
+                    <li>
+                      Difficulty understanding and using figurative language,
+                      humor, or abstract concepts.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Social Impairments:
+                  <ul>
+                    <li>
+                      Struggles with forming and maintaining friendships, and a
+                      preference for solitary activities.
+                    </li>
+                    <li>
+                      Challenges in understanding and interpreting others'
+                      emotions and intentions.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Limited Empathy and Theory of Mind:
+                  <ul>
+                    <li>
+                      Difficulty empathizing with others' emotions and
+                      perspectives.
+                    </li>
+                    <li>
+                      Challenges in understanding that other people have
+                      thoughts, feelings, and beliefs different from their own.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Hyperfocus and Special Interests:
+                  <ul>
+                    <li>
+                      Intense interest and knowledge in specific subjects, often
+                      to a degree that is unusual for their age or developmental
+                      level.
+                    </li>
+                    <li>
+                      Difficulty shifting attention away from these interests,
+                      even in social situations.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="faq-card">
+            <div class="faq-qn">3. At what age is ASD more prevalant?</div>
+            <div class="faq-ans">
+              Some children show ASD symptoms within the first 12 months of
+              life. In others, symptoms may not show up until 24 months of age
+              or later.By age 2, a diagnosis by an experienced professional can
+              be considered reliable. However, many children do not receive a
+              final diagnosis until much older.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="cpr">DSAlgoviz Copyright © 2023. All rights reserved.</div>
+      <!-- Copyright -->
+    </main>
+  </body>
+</html>

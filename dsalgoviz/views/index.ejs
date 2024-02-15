@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include("./partials/csslibs.ejs") %>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+
+    <link rel="icon" href="/images/Group 18.png" type="image/icon type" />
+    <title>ASD Screening Website</title>
+
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      .car {
+        display: flexbox;
+        float: right;
+        width: 30vw;
+        align-items: start;
+        margin-top: -50px;
+      }
+      .container {
+        display: flexbox;
+        float: left;
+        width: 20vw;
+      }
+      .d-block {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        margin-top: -90px;
+        margin-left: -100px;
+      }
+
+      .carousel {
+        max-width: 400px;
+      }
+      .col-sm-4 {
+        width: 700px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- prettier-ignore -->
+    <%- include("./partials/navbar.ejs", { page: "home" }); %>
+
+    <main style="padding: 8rem 4rem 1rem 4rem">
+      <div class="container">
+        <div class="col-sm-8">
+          <h1>
+            Welcome to&nbsp;<span style="color: #47b3d4">ASD</span>&nbsp;<span
+              style="color: #cb3b3b"
+              >Screeing</span
+            >&nbsp;Website
+          </h1>
+          <br /><br />
+          <p>
+            Made with collaboration with field experts, our website provides an
+            ASD screening service, aiding in further professional diagnosis
+            <br /><br />
+            Do you feel like you, or anyone you know is showing traits of
+            autism?
+          </p>
+          <br />
+          <div class="visu">
+            <form class="d-flex" action="/quiz">
+              <button
+                class="btn"
+                style="
+                  font-size: 20px;
+                  text-wrap: nowrap;
+                  padding: 10px 50px;
+                  border-color: #47b3d4;
+                  font-weight: 500;
+                "
+              >
+                Take the Test
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="car">
+        <img src="/images/asd.png" alt="" width="500px" />
+      </div>
+      <img
+        src="/images/welcome.jpg"
+        alt=""
+        style="width: 100%; margin-top: 50px"
+      />
+    </main>
+    <br /><br /><br /><br />
+    <!-- Copyright -->
+    <div class="cpr" style="color: #4b50b9">
+      ASD Screening Website Copyright © 2023. All rights reserved.
+    </div>
+    <br />
+    <!-- Copyright -->
+    <%- include("./partials/jslibs.ejs") %>
+  </body>
+</html>

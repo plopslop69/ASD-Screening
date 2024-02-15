@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include("./partials/csslibs.ejs") %>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <script src="/js/result.js" defer></script>
+    <link rel="icon" href="/images/Group 18.png" type="image/icon type" />
+    <title>Result - ASD Screening Website</title>
+
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+      .car {
+        display: flexbox;
+        float: right;
+        width: 30vw;
+        align-items: start;
+        margin-top: -50px;
+      }
+      .scoretxt {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 600px;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 50px;
+        p,
+        #score {
+          font-size: 40px;
+          display: flex;
+          justify-content: center;
+        }
+        span {
+          font-size: 30px;
+          margin-top: 20px;
+          font-size: 25px;
+        }
+      }
+      .container {
+        display: flexbox;
+        width: 100%;
+      }
+      .d-block {
+        position: relative;
+        width: 600px;
+        height: 600px;
+        margin-top: -90px;
+        margin-left: -100px;
+      }
+
+      .carousel {
+        max-width: 400px;
+      }
+      .col-sm-4 {
+        width: 700px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- prettier-ignore -->
+    <%- include("./partials/navbar.ejs", {page: "result"}) %>
+
+    <main style="padding: 8rem 4rem 1rem 4rem">
+      <p
+        style="
+          font-size: 60px;
+          text-align: center;
+          margin: 0 auto;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: -100px;
+          border-bottom: 1px dashed #353535;
+        "
+      >
+        Q-CHAT Survey
+      </p>
+      <div class="scoretxt">
+        <p>Your child has scored</p>
+        <p
+          id="score"
+          style="
+            color: #47b3d4;
+            font-size: 100px;
+            background-color: #47b3d4;
+            border-radius: 100%;
+            width: 120px;
+            color: white;
+          "
+        ></p>
+        <span>Thank you for completing the Q-CHAT Survey for your child.</span>
+        <span
+          >If your child scores more than
+          <span style="color: #47b3d4">3 out of 10</span>
+          , your child may possibly possess autistic traits and you will need to
+          consider referring your child
+          <a href="\resources"> to accomodation centres </a>for a
+          multi-disciplinary assessment.
+        </span>
+        <span>Move on to <a href="\cvision">Eye Contact Test</a></span>
+      </div>
+      <br /><br />
+    </main>
+    <br /><br /><br /><br />
+    <!-- Copyright -->
+    <div class="cpr" style="color: #4b50b9">
+      ASD Screening Website Copyright © 2023. All rights reserved.
+    </div>
+    <br />
+    <!-- Copyright -->
+    <%- include("./partials/jslibs.ejs") %>
+  </body>
+</html>

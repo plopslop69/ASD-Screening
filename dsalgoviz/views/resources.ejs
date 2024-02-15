@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include("./partials/csslibs.ejs") %>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/resources.css" />
+
+    <script src="/js/img_animation.js" defer></script>
+
+    <link rel="icon" href="/images/Group 18.png" type="image/icon type" />
+    <title>Resources - ASD Screening Website</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .refs {
+        display: flex;
+        background-color: white;
+        max-width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .refs img {
+        border-right: 1px solid #353535;
+        padding: 15px;
+        width: 300px;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .refs .content {
+        padding: 20px;
+      }
+
+      .refs h2 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <%- include("./partials/navbar", {page: "resource"}) %>
+
+    <main style="padding: 3rem 4rem 1rem 4rem">
+      <div class="container">
+        <style>
+          h1 {
+            text-align: center;
+            color: #4b50b9;
+          }
+
+          p {
+            text-align: center;
+          }
+        </style>
+        <div class="toptext">
+          <h1 style="color: #353535; font-size: 60px; margin-bottom: 70px">
+            ASD Accomodation Centres
+          </h1>
+        </div>
+        <a href="http://autismnepal.org/">
+          <div class="refs">
+            <img src="/images/acns.jpg" alt="Image Description" />
+            <div class="content">
+              <h2 style="font-size: 40px; padding: 10px; color: #47b3d4">
+                Autism Care Center Nepal
+              </h2>
+              <h5 style="font-size: 20px; padding: 10px; color: #353535">
+                AutismCare Nepal Society (ACNS) was founded on 2nd April 2008 on
+                the occasion of the World Autism Awareness Day. It is the only
+                active autism organization in Nepal that is run by passionate
+                parents that care for persons with autism. It is a
+                non-governmental, nonprofit making, non-political NGO registered
+                in District Administration Office (Regd. No. 1067/2065) and
+                affiliated to Social Welfare Council (SWC No: 25314).
+              </h5>
+            </div>
+          </div>
+        </a>
+        <br /><br />
+        <a href="https://centreforautism.com.np//">
+          <div class="refs">
+            <img src="/images/cfa.png" alt="Image Description" />
+            <div class="content">
+              <h2 style="font-size: 40px; padding: 10px; color: #47b3d4">
+                Centre for Autism Nepal
+              </h2>
+              <h5 style="font-size: 20px; padding: 10px; color: #353535">
+                Centre For Autism helps children with Autism Spectrum Disorder
+                (ASD) to lead dignified lives.
+              </h5>
+            </div>
+          </div>
+        </a>
+
+        <br /><br />
+        <div class="toptext">
+          <h1 style="color: #353535">Uploaded Videos</h1>
+        </div>
+        <div class="more">
+          <!-- Uploaded Resources are shown here -->
+          <% uploads.forEach(upload => { %>
+
+          <div style="margin-bottom: 10px" class="more_file">
+            <div class="icon-fname">
+              <img
+                src="/images/files.png"
+                alt="files_icon"
+                width="50px"
+                height="50px"
+              />
+              <div class="fname"><%= upload %></div>
+            </div>
+            <div class="fbtns">
+              <a href="/uploads/<%= upload %>">
+                <button class="btn fbtn">Open</button></a
+              >
+              <a href="/uploads/<%= upload %>" download="questions.pdf">
+                <button class="btn fbtn">Download</button></a
+              >
+            </div>
+          </div>
+
+          <% }) %>
+        </div>
+        <!-- Copyright -->
+        <div class="cpr">DSAlgoviz Copyright © 2023. All rights reserved.</div>
+        <!-- Copyright -->
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <%- include("./partials/csslibs.ejs") %>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <!-- <link rel="stylesheet" href="/css/home.css" /> -->
+    <link rel="stylesheet" href="/css/quiz.css" />
+    <link rel="icon" href="/images/Group 18.png" type="image/icon type" />
+
+    <title>Q-CHAT - ASD Screening Website</title>
+  </head>
+
+  <body>
+    <%- include("./partials/navbar.ejs", {page: "quiz"}) %>
+
+    <main style="padding: 4rem 4rem 1rem 4rem">
+      <div class="container">
+        <div class="toptext">
+          <h1 style="font-size: 60px"><%= data[0]?.quiz %></h1>
+        </div>
+        <!-- prettier-ignore -->
+
+        <!-- prettier-ignore -->
+        <span class="guide">
+          Please fill out the survey form below: <br>
+          <section class="guide1">
+            Be sure to:
+            <li class="li">Try to answer every question if you can</li>
+            <li class="li">
+              Fill out each question <span class="what1">carefully</span>, with
+              thorough observation
+            </li>
+          </section>
+        </span>
+        <div class="gen-qns">
+          <div class="text-label">
+            <label for="age">What is his/her age (in months)?</label>
+            <select name="age" id="age">
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+            </select>
+          </div>
+
+          <div class="text-label">
+            <label for="sex">What is his/her gender?</label>
+            <select name="sex" id="sex" required="">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="others">Others</option>
+            </select>
+          </div>
+
+          <div class="text-label">
+            <label for="ethnicity">What ethnicity does he/she belong to?</label>
+            <select name="ethnicity" id="ethnicity" required="">
+              <option value="asian">Asian</option>
+              <option value="black">Black</option>
+              <option value="Hispanic">Hispanic</option>
+              <option value="middle eastern">Middle Eastern</option>
+              <option value="south asian">South Asian</option>
+              <option value="White European">White European</option>
+              <option value="Latino">Latino</option>
+              <option value="mixed">Mixed</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+
+          <div class="text-label">
+            <label for="jaundice">Was he/she affected by jaundice?</label>
+            <select name="jaundice" id="jaundice" required="">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="text-label">
+            <label for="family_history"
+              >Is there any family history of ASD?</label
+            >
+            <select name="family_history" id="family_history" required="">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="text-label">
+            <label for="test-doer">Who completed the text?</label>
+            <select name="test-doer" id="test-doer" required="">
+              <option value="family member">Family Member</option>
+              <option value="Health Care Professional">
+                Health Care Professional
+              </option>
+              <option value="Self">Self</option>
+            </select>
+          </div>
+        </div>
+        <!-- prettier-ignore -->
+
+        <form id="main_form" action="/result">
+          
+                  <!-- prettier-ignore -->
+                  <% data.forEach((quiz) => { %>
+                    <%- include("./partials/quiz-card.ejs", { quiz }) %>
+                    <% }) %>
+          <div class="btndiv">
+            <button type="submit" class="btn submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="cpr">
+        ASD Screening Website Copyright © 2023. All rights reserved.
+      </div>
+    </main>
+  </body>
+</html>
